@@ -128,7 +128,6 @@ print(norm_fitness, np.sum(norm_fitness))
 # And now, we need a way to do selection... 
 # -- recall the np.random.choice() function you all are experts on now
 to_reproduce = np.random.choice(population, replace=True, size=pop_size, p=norm_fitness)
-print(to_reproduce)
 
 # Whoa, we did the whole selection step in a single line!
 # What kind of selection method is this? Think about how an individual's fitness
@@ -191,6 +190,7 @@ average_fitnesses = [ np.mean(p.get_absolute_fitnesses()) ]
 # Note, this does take a bit of time to run! If you want to speed it up,
 # go for it! Changing your representation could have a very big effect! 
 for t in range(num_generations):
+    print("Generation {0}".format(t))
     #Step the population forward one generation
     p.step_generation()
     #Keep track of the average fitness
